@@ -6,7 +6,7 @@ try {
   const adminEndpointURL = core.getInput("adminEndpointURL");
   const coverageReportPath = core.getInput("coverageReportPath");
   runGradingAction(adminEndpointURL, coverageReportPath, github.context).then(
-    () => {
+    (gradeReport) => {
       core.setOutput("grade", gradeReport.grade);
     }
   );
